@@ -1,0 +1,3 @@
+#!/bin/bash
+# Run SoulBrowser stealth test suite
+exec python -u /app/examples/stealth_test.py --no-screenshots "$@"

@@ -1,0 +1,141 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "soulbrowser"
+dynamic = ["version"]
+description = "Soul Browser — The Ultimate Privacy-First Stealth Browser. 100x more powerful than standard browsers with advanced fingerprint protection, ML-based tracking prevention, built-in ad blocker, and enterprise-grade security features."
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.9"
+authors = [
+    { name = "Soul Browser Team", email = "soulbrowser@soulbrowser.dev" },
+]
+keywords = [
+    "stealth",
+    "browser",
+    "chromium",
+    "playwright",
+    "puppeteer",
+    "privacy",
+    "security",
+    "fingerprint",
+    "anti-detect",
+    "antidetect",
+    "undetected",
+    "bot-detection",
+    "recaptcha",
+    "cloudflare",
+    "turnstile",
+    "datadome",
+    "captcha",
+    "headless",
+    "automation",
+    "ai-agent",
+    "web-scraping",
+    "scraping",
+    "tracking-protection",
+    "ad-blocker",
+    "dns-over-https",
+    "webrtc-protection",
+    "vpn",
+    "tor",
+    "web3",
+    "cryptocurrency",
+    "ipfs",
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Internet :: WWW/HTTP :: Browsers",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Software Development :: Testing",
+    "Topic :: Security",
+    "Topic :: Internet :: WWW/HTTP",
+]
+dependencies = [
+    "playwright>=1.40",
+    "httpx>=0.24",
+]
+
+[project.optional-dependencies]
+geoip = ["geoip2>=4.0", "socksio>=1.0"]
+patchright = ["patchright>=1.40"]
+serve = ["aiohttp>=3.9", "websockets>=12.0"]
+web3 = ["web3>=6.0"]
+ai = ["openai>=1.0", "anthropic>=0.8"]
+all = [
+    "geoip2>=4.0",
+    "socksio>=1.0",
+    "patchright>=1.40",
+    "aiohttp>=3.9",
+    "websockets>=12.0",
+    "web3>=6.0",
+    "openai>=1.0",
+    "anthropic>=0.8",
+]
+dev = [
+    "pytest>=7.0",
+    "pytest-asyncio>=0.23",
+    "pytest-cov>=4.0",
+    "black>=23.0",
+    "ruff>=0.1.0",
+    "mypy>=1.0",
+]
+
+[project.scripts]
+soulbrowser = "soulbrowser.__main__:main"
+
+[project.urls]
+Homepage = "https://github.com/vikrant-project/soulbrowser"
+Documentation = "https://github.com/vikrant-project/soulbrowser#readme"
+Repository = "https://github.com/vikrant-project/soulbrowser"
+Issues = "https://github.com/vikrant-project/soulbrowser/issues"
+Changelog = "https://github.com/vikrant-project/soulbrowser/blob/main/CHANGELOG.md"
+
+[tool.hatch.version]
+path = "soulbrowser/_version.py"
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "/soulbrowser",
+    "/tests",
+    "/README.md",
+    "/LICENSE",
+    "/CHANGELOG.md",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["soulbrowser"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+markers = [
+    "slow: marks tests that hit live detection sites",
+    "integration: marks integration tests",
+]
+
+[tool.black]
+line-length = 100
+target-version = ["py39", "py310", "py311", "py312"]
+
+[tool.ruff]
+line-length = 100
+select = ["E", "F", "W", "I", "UP", "B"]
+ignore = ["E501"]
+
+[tool.mypy]
+python_version = "3.9"
+warn_return_any = true
+warn_unused_ignores = true
+disallow_untyped_defs = true
