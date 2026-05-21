@@ -1,75 +1,104 @@
+# Soul Browser .gitignore
+
 # Python
 __pycache__/
 *.py[cod]
 *$py.class
 *.so
-*.egg-info/
-dist/
+.Python
 build/
-*.egg
+develop-eggs/
+dist/
+downloads/
+eggs/
 .eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
 
-# Virtual environment
-.venv/
-venv/
+# Virtual environments
+.env
+.venv
 env/
+venv/
+ENV/
+env.bak/
+venv.bak/
 
-# IDE
-.vscode/
+# IDEs
 .idea/
+.vscode/
 *.swp
 *.swo
 *~
-
-# OS
-.DS_Store
-Thumbs.db
+.project
+.pydevproject
+.settings/
 
 # Testing
-.pytest_cache/
+.tox/
+.nox/
 .coverage
+.coverage.*
 htmlcov/
+.pytest_cache/
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+
+# Jupyter
+.ipynb_checkpoints
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Ruff
+.ruff_cache/
+
+# Node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+yarn-debug.log
+.pnpm-debug.log
+
+# Build outputs
+dist/
+*.tar.gz
+*.zip
+
+# OS files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Local config
+.env.local
+.env.*.local
 
 # Binary cache (downloaded chromium)
-.cloakbrowser/
+~/.soulbrowser/
+~/.cloakbrowser/
 
-# Claude Code (private project context)
-CLAUDE.md
-.claude/
-
-# JavaScript / Node.js
-js/node_modules/
-js/dist/
-
-# Distribution
-*.tar.gz
-*.whl
-AGENTS.md
-.beads
-result
-
-# Private docs (launch posts, strategy)
-docs/
-
-# Internal test infrastructure (Docker, VPS-specific)
-test-infra/
-
-# Website (deployed separately)
-site/
-
-# Browser profile manager (deployed separately)
-manager/
-
-# Release scripts
-publish.sh
-deploy.sh
-.env
-debug
-publish-docker.sh
-captures
-20[0-9][0-9]-[0-9][0-9]-[0-9][0-9]-*.txt
-
-# Beads / Dolt files (added by bd init)
-.dolt/
-*.db
-.beads-credential-key
+# Test artifacts
+test_reports/
+screenshots/
